@@ -12,9 +12,14 @@ Real-Time SPC & Anomaly Detection in streaming pipelines based on strategic mix 
 
 ## Domain Use Cases 
 
-While the math formulas themselves—like calculating a standard deviation (\(\sigma \)) or a Z-score \(frac{X - 𝜇 }/{𝜎}\))—are simple level math, when you move from a static Jupyter Notebook to PySpark Structured Streaming, implementing them in a distributed, real-time streaming pipeline is deceptively difficult and drives in into the challenges of distributed systems engineering. 
+• Natural Fit for SPC: Statistical Process Control was literally invented for manufacturing and industrial processes. SPC relies on continuous, normally distributed variables (like temperature, vibration, pressure, or voltage). Calculating running averages, standard deviations, and control limits (like Western Electric Rules) makes perfect sense here.
+• Predictable Schema: IoT sensors emit uniform, predictable data points at steady intervals. This makes it much easier to build your Moving Window Metrics (Task 1) and Z-Score Evaluation (Task 2) without constantly fighting missing data fields.
+• Multivariate Anomalies: For your Isolation Forest (Task 3), an industrial machine often fails due to a combination of factors (e.g., high temperature and low RPM). This provides a compelling story for why you needed a machine learning model alongside traditional SPC limits.
 
 ![streaming-windows](https://github.com/Logic-HQ/sentinel-stream-spc/blob/main/docs/img/streaming-windows.gif)
+
+While the math formulas themselves—like calculating a standard deviation (\(\sigma \)) or a Z-score \(frac{X - 𝜇 }/{𝜎}\))—are simple level math, when you move from a static Jupyter Notebook to PySpark Structured Streaming, implementing them in a distributed, real-time streaming pipeline is deceptively difficult and drives in into the challenges of distributed systems engineering. 
+
 
 To solve complex streaming edge cases.
 
